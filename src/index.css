@@ -1,0 +1,225 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #0a0e1a;
+  color: #e2e8f0;
+  font-size: 13px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: #0f1623;
+  border-bottom: 1px solid #1e2d45;
+}
+
+.topbar-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #7dd3fc;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.live-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #4ade80;
+}
+
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #4ade80;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 14px 20px;
+  background: #0a0e1a;
+}
+
+.metric-card {
+  background: #0f1623;
+  border: 1px solid #1e2d45;
+  border-radius: 6px;
+  padding: 12px 16px;
+}
+
+.metric-label {
+  font-size: 10px;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.metric-value {
+  font-size: 26px;
+  font-weight: 600;
+  color: #e2e8f0;
+}
+
+.metric-value.danger { color: #f87171; }
+.metric-value.warn { color: #fbbf24; }
+.metric-value.ok { color: #4ade80; }
+
+.metric-sub {
+  font-size: 11px;
+  color: #475569;
+  margin-top: 4px;
+}
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 10px;
+  padding: 0 20px 20px;
+}
+
+.panel {
+  background: #0f1623;
+  border: 1px solid #1e2d45;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: 1px solid #1e2d45;
+  background: #0d1420;
+}
+
+.panel-title {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+}
+
+.filter-btn {
+  font-size: 10px;
+  padding: 3px 10px;
+  border: 1px solid #1e2d45;
+  border-radius: 4px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: #1e3a5f;
+  color: #7dd3fc;
+  border-color: #2d5a8e;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  font-size: 10px;
+  font-weight: 600;
+  color: #475569;
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 1px solid #1e2d45;
+  background: #0d1420;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  user-select: none;
+}
+
+th:hover { color: #94a3b8; }
+
+td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #111827;
+  color: #cbd5e1;
+}
+
+tr:hover td { background: #111827; }
+
+.mag-high { color: #f87171; font-weight: 600; }
+.mag-med { color: #fbbf24; font-weight: 600; }
+.mag-low { color: #94a3b8; }
+
+.badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+.badge-red { background: #450a0a; color: #f87171; }
+.badge-yellow { background: #451a03; color: #fbbf24; }
+.badge-green { background: #052e16; color: #4ade80; }
+.badge-gray { background: #1e293b; color: #64748b; }
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 14px;
+  border-top: 1px solid #1e2d45;
+  font-size: 11px;
+  color: #475569;
+}
+
+.pg-btns { display: flex; gap: 4px; }
+
+.pg-btn {
+  font-size: 11px;
+  padding: 3px 8px;
+  border: 1px solid #1e2d45;
+  border-radius: 3px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.pg-btn:hover { background: #1e2d45; color: #e2e8f0; }
+.pg-btn.active { background: #1e3a5f; color: #7dd3fc; border-color: #2d5a8e; }
+.pg-btn:disabled { opacity: 0.3; cursor: default; }
+
+.sidebar { display: flex; flex-direction: column; gap: 10px; }
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.bar-label { font-size: 11px; color: #475569; width: 40px; text-align: right; }
+.bar-track { flex: 1; background: #1e2d45; border-radius: 2px; height: 8px; }
+.bar-fill { height: 8px; border-radius: 2px; }
+.bar-count { font-size: 11px; color: #475569; width: 30px; }
+
+.loading { padding: 40px; text-align: center; color: #475569; }
